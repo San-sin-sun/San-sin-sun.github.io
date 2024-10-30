@@ -1,0 +1,1068 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Sin">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="Intro-Biomolecules Statistical-Physics-Basics Basics Microstate: M particles, N levels: \(\Omega &#x3D; M^N\) Macrostate: Histogram of the number of particles per energy level Macrostate{3, 1, 5}:">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Biological Physics">
+<meta property="og:url" content="http://example.com/2024/10/28/Biological-Physics/index.html">
+<meta property="og:site_name" content="Sin 的个人博客">
+<meta property="og:description" content="Intro-Biomolecules Statistical-Physics-Basics Basics Microstate: M particles, N levels: \(\Omega &#x3D; M^N\) Macrostate: Histogram of the number of particles per energy level Macrostate{3, 1, 5}:">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-10-28T08:26:57.000Z">
+<meta property="article:modified_time" content="2024-10-30T08:53:10.825Z">
+<meta property="article:author" content="Sin">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>Biological Physics - Sin 的个人博客</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+    <!-- Google tag (gtag.js) -->
+    <script async>
+      if (!Fluid.ctx.dnt) {
+        Fluid.utils.createScript("https://www.googletagmanager.com/gtag/js?id=", function() {
+          window.dataLayer = window.dataLayer || [];
+          function gtag() {
+            dataLayer.push(arguments);
+          }
+          gtag('js', new Date());
+          gtag('config', '');
+        });
+      }
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+  
+
+  <!-- MathJax Configuration -->
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ["$","$"], ["\(","\)"] ],
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+      processEscapes: true
+    }
+  });
+  MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax();
+      for (var i = 0; i < all.length; ++i)
+          all[i].SourceElement().parentNode.className += ' has-jax';
+  });
+  </script>
+  <script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
+<meta name="generator" content="Hexo 7.2.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Sin的学习笔记</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/background.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="Biological Physics"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2024-10-28 16:26" pubdate>
+          2024年10月28日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          1.1k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          9 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="busuanzi_container_page_pv" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="busuanzi_value_page_pv"></span> 次
+        </span>
+        
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">Biological Physics</h1>
+            
+              <p id="updated-time" class="note note-info" style="display: none">
+                
+                  
+                    本文最后更新于 2024-10-30T16:53:10+08:00
+                  
+                  
+
+                
+              </p>
+            
+            
+              <div class="markdown-body">
+                
+                <h2 id="intro-biomolecules">Intro-Biomolecules</h2>
+<h2 id="statistical-physics-basics">Statistical-Physics-Basics</h2>
+<h3 id="basics">Basics</h3>
+<p><strong>Microstate</strong>: M particles, N levels: <span
+class="math inline">\(\Omega = M^N\)</span> <strong>Macrostate</strong>:
+Histogram of the number of particles per energy level Macrostate{3, 1,
+5}:</p>
+<ul>
+<li>3 particles are in level 1</li>
+<li>1 particle is in level 2</li>
+<li>5 particles are in level 3</li>
+</ul>
+<p>Fundamental concept of statistical Physics</p>
+<ul>
+<li>Describe a system only as a MACROSTATE = Histogram</li>
+<li>It is not relevant which individual particle is in what level</li>
+<li>Compared to the exact description of a system (MICROSTATE),
+information is lost. A histogram contains LESS information than the data
+set that generated it</li>
+<li>Cannot construct the exact(MICROSTATE) of a system from the
+MACROSTATE because the MACROSTATE is just a distribution</li>
+<li>The amount of the missing information is measureed by the
+statistical weight <span class="math inline">\(\Omega\)</span> of the
+Macrostate, or <span class="math inline">\(\ln(\Omega)\)</span></li>
+</ul>
+<p><strong>Stastical weight of a macrostate <span
+class="math inline">\(\Omega\)</span></strong></p>
+<p>How many microstates belong to the macrostate eg: {2,0,0,1,0} has 3
+microstates</p>
+<p><span class="math inline">\(\Omega =
+N!\)</span>(所有粒子能量均不相同)</p>
+<p><strong><em>Degeneracy</em></strong></p>
+<p><span class="math inline">\({1,0,0,2}: \Omega =
+\frac{3!}{2!}\)</span></p>
+<h3 id="entropy">Entropy</h3>
+<p><span class="math inline">\(S = k_B \ln \Omega, \Omega =
+\frac{N!}{n_0!n_1!\cdots}\)</span></p>
+<p><strong>Stirling's theorem</strong> <span class="math display">\[N!
+\approx \frac{N^N}{e^N}\sqrt{2\pi N}\]</span> <span
+class="math display">\[\ln N! \approx N \ln N -N\]</span></p>
+<p>Entropy S is a property of a macrostate of a system, gives the level
+of disorder of that macrostate</p>
+<h2 id="boltzman-free-energy">Boltzman-Free-Energy</h2>
+<h3 id="boltzman">Boltzman</h3>
+<p><span class="math inline">\(\ln \Omega = \ln \frac{N!}{\prod_{i}n_i!}
+= N\ln N - \sum_{i}(n_i\ln n_i)\)</span> Maximum of entropy occurs for
+<span class="math inline">\(dS = d(k_B \ln \Omega)=0\)</span> <span
+class="math display">\[d\ln\Omega=-\sum_{i}\ln n_i dn_i=0\]</span> <span
+class="math inline">\(\sum_i n_i = N, \sum_i dn_i=0\)</span> Use
+Lagrange's method of undertimined multipliers: <span
+class="math inline">\(n_i = \frac{N}{M}\)</span></p>
+<h4 id="microcanonical-ensemble">Microcanonical ensemble</h4>
+<p><span class="math display">\[\sum_i \epsilon_in_i = E\]</span> <span
+class="math inline">\(n_i = Ae^{-\beta\epsilon_i},A =
+e^{-\lambda}\)</span> <span class="math inline">\(n_i =
+N\frac{e^{-\beta\epsilon_i}}{\sum_ie^{-\beta\epsilon_i}}\)</span> <span
+class="math inline">\(p_i =
+\frac{e^{-\beta\epsilon_i}}{\sum_ie^{-\beta\epsilon_i}}\)</span> <span
+class="math inline">\(Z = \sum_{i=1}^{M}e^{-\beta\epsilon_i}\)</span>
+<span class="math inline">\(T=0,\beta = \infty,p_1=1,p_{i\geq
+2}=0\)</span> <span class="math inline">\(T=\infty,\beta=0,p_i =
+\frac{1}{M}\)</span> <span class="math inline">\(E = \sum_i
+\epsilon_in_i=N\sum_i\epsilon_ip_i=\frac{N}{Z}\sum_i\epsilon_ie^{-\beta\epsilon_i}=-N\frac{\partial\ln
+Z}{\partial\beta}\)</span></p>
+<p>Constant total energy of system depends on temperature</p>
+<h3 id="connection">Connection</h3>
+<p><span class="math inline">\(dQ=TdS\)</span> <span
+class="math display">\[E=U=\sum_i\epsilon_in_i\]</span> <span
+class="math display">\[dU =
+\sum_i\epsilon_idn_i+\sum_in_id\epsilon_i\]</span> 因为<span
+class="math inline">\(\ln \Omega\)</span>里面有<span
+class="math inline">\(dn_i\)</span>，所以第一项指的是<span
+class="math inline">\(dQ\)</span>，第二项是<span
+class="math inline">\(dW\)</span></p>
+<h3 id="ensembles">Ensembles</h3>
+<p><span class="math display">\[S_{AB}=S_A+S_B\]</span></p>
+<p><font color='red'>看看下面三个定义怎么推的</font></p>
+<h4 id="temperature-definition">Temperature definition</h4>
+<p><span class="math display">\[\frac{1}{T}\equiv \frac{\partial
+S}{\partial E}\]</span></p>
+<h4 id="pressure-definition">Pressure definition</h4>
+<p><span class="math display">\[\frac{P}{T}=(\frac{\partial S}{\partial
+V})_E\]</span></p>
+<h4 id="chemical-potential-definition">Chemical potential
+definition</h4>
+<p><span class="math display">\[\frac{\mu}{T}=-(\frac{\partial
+S}{\partial N})_{E,V}\]</span></p>
+<h4 id="free-energy">Free energy</h4>
+<p><font color='red'>看ppt还有tutorial吧</font></p>
+<h3 id="partition-function">Partition Function</h3>
+<h4 id="degeneracy">Degeneracy</h4>
+<p><span
+class="math inline">\(Z=e^{-\beta\epsilon_1}+2e^{-\beta\epsilon_2}\)</span></p>
+<p>In <strong>equilibrium</strong>, E,S and F are connected t Z by
+simple equations</p>
+<p><span class="math inline">\(S=\frac{E}{T}+Nk\ln Z\)</span> <span
+class="math inline">\(F =E-TS\)</span> <span
+class="math inline">\(S=Nk(\ln Z +T\frac{\ln Z}{\partial
+T})\)</span></p>
+<h4 id="partition-function-of-the-system">Partition function of the
+system</h4>
+<p><span class="math inline">\(Z_N=Z^N\)</span> <span
+class="math inline">\(Z_N=\sum_ie^{-\beta E_i}\)</span></p>
+<h4 id="boltzmann-distribution-derivation-by-system">Boltzmann
+Distribution derivation by system</h4>
+<p><span
+class="math inline">\(p_i=\frac{1}{Z_N}e^{-\beta\epsilon_i}\)</span></p>
+<h2 id="mixing-osmosis">Mixing-Osmosis</h2>
+<h3 id="mixing-entropy-and-dilute-solutions">Mixing Entropy and dilute
+solutions</h3>
+<p>Lattice models: <span class="math inline">\(N=N_W+N_S\)</span></p>
+<h4 id="entropy-of-mixing">Entropy of Mixing</h4>
+<h3 id="polymer-solutions-mixing-entropy">Polymer solutions-Mixing
+entropy</h3>
+<h4 id="polymer-solutions">Polymer solutions</h4>
+<p>Entropy of mixing: <span class="math inline">\(\Delta S_{mix}=-k(A\ln
+\frac{A}{A+B}+B\ln \frac{B}{A+B})\)</span></p>
+<p><font color='red'>看ppt还有tutorial吧</font></p>
+<h3 id="osmosis">Osmosis</h3>
+<p>Entropy of mixing: <span class="math inline">\(\Delta
+S_{mix}=-k(N_S\ln \frac{N_S}{N_S+N_W}+N_W\ln \frac{N_W}{N_S+N_W})\approx
+-k(N_S\ln \frac{N_S}{N_W}-N_S)\)</span></p>
+<p>Solvation energy = contribution per solute molecule multiplied by the
+total number of such molecules. <span
+class="math display">\[dU=\epsilon_s dn_s\]</span> <strong>First law of
+thermodynamics</strong> <span
+class="math inline">\(\epsilon_sdN_s+\mu_W^0dN_W=TdS+\mu_SdN_S+\mu_WdN_W\)</span>
+分别令<span class="math inline">\(dN_S,dN_W=0\)</span>, 有<span
+class="math inline">\(\mu_W=\dots, \mu_S = \dots\)</span> 使用<span
+class="math inline">\(\Delta S_{mix}\)</span>得到所需偏导
+最后得到：<span class="math inline">\(\mu_S=\epsilon_S+kT\ln
+\frac{n_S}{n_W}\)</span> <span class="math display">\[\mu_S=\mu_0+kT\ln
+\frac{c}{c_0},\enspace c =\frac{n_S}{V},\enspace
+c_0=\frac{n_W}{V}\]</span></p>
+<h4 id="osmotic-pressure">Osmotic Pressure</h4>
+<p><span class="math display">\[\Delta P=cRT\]</span> <span
+class="math inline">\(R = k_BN_A\)</span> if equation contains kB,
+quantities relate to one particle, otherwise relate to one mole</p>
+<p><span class="math display">\[\Delta P=cRT,\enspace
+c(mol/L)\]</span></p>
+<p><span class="math display">\[\Delta P=ck_BT,\enspace
+c(个/m^3)\]</span></p>
+<h3 id="revere-osmosis">Revere Osmosis</h3>
+<p><font color='red'>看tutorial吧</font></p>
+<h2 id="binding">5. Binding</h2>
+<h3 id="equilibria-binding">5.1 Equilibria Binding</h3>
+<h4 id="ligand-receptor-binding">Ligand-Receptor Binding</h4>
+<p><font color='red'>要看一下ppt和tutorial，推<span
+class="math inline">\(p_{bound}\)</span></font> Hill function</p>
+<h4 id="reactions">Reactions</h4>
+<p><span class="math display">\[K_{eq} \equiv \prod_i
+c_{i-eq}^{\upsilon_i}\]</span></p>
+<p><span class="math inline">\(\Delta G = \sum_i\upsilon_i\mu_i\)</span>
+<span class="math inline">\(\mu = \mu_0+kT\ln \frac{c}{c_0}\)</span>
+<span class="math inline">\(\Delta G =0\)</span> <span
+class="math display">\[\Delta G_0=-k_BT\ln K_{eq}\]</span></p>
+<p><span class="math display">\[\Delta G=k_BT\ln
+\frac{K}{K_{eq}}\]</span></p>
+<h3 id="protein-folding">5.2 Protein folding</h3>
+<p><font color='red'>全是叙述，看一下ppt，不看也没问题</font></p>
+<h2 id="grand-canonical-cooperativity">6.
+Grand-canonical-cooperativity</h2>
+<h3 id="gibbs-ensemble">6.1 Gibbs-Ensemble</h3>
+<p>finding a given state of the system(charaterized by an energy <span
+class="math inline">\(E_A\)</span> and nuber of particles <span
+class="math inline">\(N_A\)</span> is <strong>proportional to the number
+of states available to the reservoir <span
+class="math inline">\(R\)</span></strong>) when the system is in this
+state</p>
+<p><span class="math display">\[p_A = \frac{Z}{e^{-\beta(E_A-\mu
+N_A)}}\]</span> <span class="math display">\[Z=\sum_ie^{-\beta (E_i-\mu
+N_i)}\]</span></p>
+<p><font color='red'>看一下tutorial，怎么用公式</font></p>
+<h3 id="cooperativity">6.2 Cooperativity</h3>
+<p><font color='red'>使用上节公式，看一下tutorial，怎么用公式</font></p>
+<h2 id="aminoacids-pka-atp-phosphorylation">7.
+Aminoacids-pKa-ATP-Phosphorylation</h2>
+<h3 id="aminoacids-pka">7.1 Aminoacids-pKa</h3>
+<p>Proteins, chirality, diversity, peptide bond formation, basic protein
+structure, from primary to quaternary structure, disease <span
+class="math inline">\(K_W=[OH^-][H_3O^+],pH\)</span> <span
+class="math inline">\(pK_a=pH-\lg \frac{[A^-]}{[AH]}\)</span> 得：<span
+class="math inline">\(\frac{[A^-]}{AH}=\dots\)</span> <span
+class="math display">\[p(A^-)=\frac{1}{1+10^(pK_a-pH)}\]</span></p>
+<p><span
+class="math display">\[p(HA)=\frac{1}{1+10^(pH-pK_a)}\]</span></p>
+<h3 id="atp">7.2 ATP</h3>
+<p><font color='red'>看一下tutorial ATP怎么算</font></p>
+<h3 id="phosphorylation">7.3 Phosphorylation</h3>
+<p><font color='red'>看一下tutorial ATP怎么算</font></p>
+<h2 id="diffusion">8. Diffusion</h2>
+<h3 id="mean-variance-sem">8.1 Mean Variance SEM</h3>
+<p>mean: <span
+class="math inline">\(\overline{x}=\frac{1}{N}\sum_{i=1}^{N}x_i=\sum_ip_ix_i=\int_{-\infty}^{\infty}xp(x)dx\)</span>
+<span class="math inline">\(\sigma:\)</span> 三种形式</p>
+<p><font color='red'>推一下ppt概率公式？</font></p>
+<h3 id="diffusion-1">8.2 Diffusion</h3>
+<p>Divergence theorem: <span class="math inline">\(\int_V\nabla \cdot
+\mathbf EdV =\oiiint \mathbf E\cdot d\mathbf A\)</span> Continuity
+equation: <span class="math inline">\(\nabla\cdot\mathbf j(\mathbf
+r,t)=-\frac{\partial \rho(\mathbf r,t)}{\partial t}\)</span> Flux: <span
+class="math inline">\(\mathbf j \equiv \frac{Substance}{Area \times
+Time} = \rho \mathbf v\)</span> Fick's First Law: <span
+class="math display">\[j = -D\frac{d\rho}{dx},\enspace \mathbf
+j=-D\nabla \rho\]</span></p>
+<p>Fick's Second Law: <span
+class="math display">\[\frac{\partial\rho}{\partial
+t}=D\nabla^2\rho\]</span> Solution: <span
+class="math display">\[\rho(x,t)=\frac{\rho_0}{\sqrt{4\pi
+Dt}}e^{-\frac{(x-x_0)^2}{4Dt}}\]</span></p>
+<p><span class="math display">\[\rho(\mathbf
+r,t)=\frac{\rho_0}{\sqrt{4\pi Dt}}e^{-\frac{(\mathbf r-\mathbf
+r_0)^2}{4Dt}}\]</span> mean: <span
+class="math inline">\(\overline{x}(t)=0\)</span> variance: <span
+class="math inline">\(\sigma_x^2=2Dt\)</span></p>
+<h4 id="brownain-motion-microscopic-model-random-walk">Brownain motion
+microscopic model: Random walk</h4>
+<p><span class="math inline">\(\overline{X}=0\)</span> But what counts
+is not the mean position, but the spread <span
+class="math inline">\(\sigma_x^2=N(\overline{x^2}-\overline{x}^2)=N\overline{x^2}=Nl^2=N\overline{v}l\tau=\overline{v}lt\)</span>
+又：<span class="math inline">\(\sigma _x^2(t)=2Dt\)</span> <span
+class="math inline">\(D=\frac{1}{2}\overline{v}l\)</span> Different
+equations for different situations are in ppt</p>
+<p><span class="math display">\[x = \sigma_x =
+\sqrt{2D}\sqrt{t}\]</span></p>
+<h4 id="diffusion-with-external-forces">Diffusion with external
+forces</h4>
+<p><span class="math inline">\(v_D=\mu F=\frac{1}{\gamma}mg\)</span>
+Down-flux: <span class="math inline">\(j_1=\mu mg\rho\)</span> Up-flux:
+<span class="math inline">\(j_2=-D\frac{d\rho}{dh}\)</span> <span
+class="math inline">\(j_1=j_2\)</span> <span
+class="math display">\[\rho(h)=\rho_0e^(-\frac{\mu mg}{D}h)\]</span></p>
+<p>Compared to Boltzman distribution: <span
+class="math display">\[\rho(h)=\rho_0e^{-\beta mgh},\enspace
+E=mgh\]</span></p>
+<p>Einstein Relation: <span class="math display">\[D=\mu kT\]</span></p>
+<h4 id="special-case-for-stokes-law">Special case for Stoke's Law</h4>
+<p>Frictional force (drag force) exerted on spherical objects with very
+small Reynolds numbers (e.g., very small particles)in a continuous
+viscous fluid Stoke's Law: <span class="math display">\[F=6\pi R\eta
+v,\enspace \mu=\frac{v}{F}\]</span></p>
+<p><span class="math display">\[D = \frac{kT}{6\pi R\eta}\]</span></p>
+<p>Flux with external force: <span
+class="math inline">\(\mathbf{j}=-D\nabla \rho +\mu F\rho\)</span>
+Diffusion equation with external force: <span
+class="math inline">\(\frac{\partial \rho}{\partial T}=D\nabla^2\rho-\mu
+F\nabla\rho\)</span></p>
+<h2 id="electro">9. Electro</h2>
+<h3 id="poission-boltzmann">9.1 Poission-Boltzmann</h3>
+<h4 id="electronics-for-salty-solutions">Electronics for Salty
+Solutions</h4>
+<p>Magnetic fields play (almost) no role <span
+class="math display">\[\nabla
+\cdot\mathbf{E}(\mathbf{r})=\frac{\rho(\mathbf{r})}{\varepsilon_0}\]</span>
+Poisson's equation: <span
+class="math inline">\(\nabla^2\Phi(\mathbf{r})=-\frac{\rho(\mathbf{r})}{\varepsilon_0}\)</span>
+Laplace's equation: <span class="math inline">\(\nabla^2
+\Phi(\mathbf{r})=0\)</span></p>
+<p><span class="math inline">\(p_{Ion}(\mathbf{r})\propto e^{-\beta
+E(\mathbf{r})}, \enspace E(\mathbf{r})=q\Phi(\mathbf{r})\)</span>
+<strong>Charge density of the ion cloud</strong>: <span
+class="math display">\[\rho_i(\mathbf{r})=q_in_i^{\infty}e^{-\beta
+q_i\Phi(\mathbf{r})}\]</span></p>
+<p><strong>total charge density</strong>: <span
+class="math display">\[\rho_{Ions}(\mathbf{r})=\sum_iq_in_i^{\infty}e^{-\beta
+q_i\Phi(\mathbf{r})}\]</span></p>
+<p><strong>Poisson-Boltzman equation</strong> <span
+class="math display">\[\nabla^2\Phi(\mathbf{r})=-\frac{e}{\varepsilon}\sum_{i=1}^nz_ic_{i,\infty}e^{-\beta
+z_ie\Phi(\mathbf{r})}-\frac{\rho(\mathbf{r})}{\varepsilon}\]</span></p>
+<p><font color='red'>看一下tutorial</font></p>
+<h3 id="debye-huckel-theory">9.2 Debye-Huckel theory</h3>
+<h4 id="bjerrum-length">Bjerrum length</h4>
+<p>Balance the ekectrostatic interaction energy: <span
+class="math display">\[\frac{e^2}{4\pi
+\varepsilon_0Dl_B}=k_BT\]</span></p>
+<p><span
+class="math display">\[l_B=\frac{e^2}{4\pi\varepsilon_0Dk_BT}\]</span></p>
+<h4 id="debye-huckel-theory-1">Debye-Huckel theory</h4>
+<p><strong>Debye-Huckle equation:</strong> <span
+class="math display">\[\nabla^2\Phi(\mathbf{r})=\frac{e^2\beta}{\varepsilon}(\sum_iz_i^2n_i^{\infty})\Phi(\mathbf{r})\]</span></p>
+<p><strong>Debye length</strong> <span
+class="math display">\[\lambda_D=(\frac{\varepsilon
+k_BT}{e^2\sum_iz_i^2n_i^{\infty}})^{\frac{1}{2}}\]</span></p>
+<p><strong>Ionic strength</strong> <span class="math display">\[I\equiv
+\frac{1}{2}\sum_iz_i^2n_i^{\infty}\]</span></p>
+<p><span
+class="math display">\[\nabla^2\Phi(\mathbf{r})=\frac{1}{\lambda_D^2}\Phi(\mathbf{r})\]</span></p>
+<p><font color='red'>看一下tutorial中公式怎么用的</font></p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/" class="category-chain-item">课程笔记</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>Biological Physics</div>
+      <div>http://example.com/2024/10/28/Biological-Physics/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Sin</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2024年10月28日</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>更新于</div>
+          <div>2024年10月30日</div>
+        </div>
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2024/09/26/%E7%83%AD%E5%8A%9B%E5%AD%A6%E4%B8%8E%E7%BB%9F%E8%AE%A1%E7%89%A9%E7%90%86/" title="热力学与统计物理">
+                        <span class="hidden-mobile">热力学与统计物理</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+  
+    
+  
+  
+  
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  var relativeDate = function() {
+    var updatedTime = document.getElementById('updated-time');
+    if (updatedTime) {
+      var text = updatedTime.textContent;
+      var reg = /\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:Z|[+-]\d{2}:\d{2})/;
+      var matchs = text.match(reg);
+      if (matchs) {
+        var relativeTime = moment(matchs[0]).fromNow();
+        updatedTime.textContent = text.replace(reg, relativeTime);
+      }
+      updatedTime.style.display = '';
+    }
+  };
+  Fluid.utils.createScript('https://lib.baomitu.com/moment.js/2.29.4/moment.min.js', function() {
+    if (!'zh-cn'.startsWith('en')) {
+      Fluid.utils.createScript('https://lib.baomitu.com/moment.js/2.29.4/locale/zh-cn.min.js', function() {
+        relativeDate();
+      });
+    } else {
+      relativeDate();
+    }
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  
+        <script>
+          if (!window.MathJax) {
+            window.MathJax = {
+              tex    : {
+                inlineMath: { '[+]': [['$', '$']] }
+              },
+              loader : {
+                load: ['ui/lazy']
+              },
+              options: {
+                renderActions: {
+                  insertedScript: [200, () => {
+                    document.querySelectorAll('mjx-container').forEach(node => {
+                      let target = node.parentNode;
+                      if (target.nodeName.toLowerCase() === 'li') {
+                        target.parentNode.classList.add('has-jax');
+                      }
+                    });
+                  }, '', false]
+                }
+              }
+            };
+          } else {
+            MathJax.startup.document.state(0);
+            MathJax.texReset();
+            MathJax.typeset();
+            MathJax.typesetPromise();
+          }
+  
+          Fluid.events.registerRefreshCallback(function() {
+            if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
+              MathJax.startup.document.state(0);
+              MathJax.texReset();
+              MathJax.typeset();
+              MathJax.typesetPromise();
+            }
+          });
+        </script>
+      
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
