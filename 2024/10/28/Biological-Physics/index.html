@@ -24,7 +24,7 @@
 <meta property="og:description" content="Intro-Biomolecules Statistical-Physics-Basics Basics Microstate: M particles, N levels: \(\Omega &#x3D; M^N\) Macrostate: Histogram of the number of particles per energy level Macrostate{3, 1, 5}:">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-10-28T08:26:57.000Z">
-<meta property="article:modified_time" content="2024-10-30T08:53:10.825Z">
+<meta property="article:modified_time" content="2025-11-21T14:59:19.894Z">
 <meta property="article:author" content="Sin">
 <meta name="twitter:card" content="summary_large_image">
   
@@ -267,7 +267,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.1k 字
+          1.9k 字
         
       </span>
     
@@ -278,7 +278,7 @@
         
         
         
-          9 分钟
+          16 分钟
         
       </span>
     
@@ -328,7 +328,7 @@
               <p id="updated-time" class="note note-info" style="display: none">
                 
                   
-                    本文最后更新于 2024-10-30T16:53:10+08:00
+                    本文最后更新于 2025-11-21T22:59:19+08:00
                   
                   
 
@@ -626,6 +626,301 @@ k_BT}{e^2\sum_iz_i^2n_i^{\infty}})^{\frac{1}{2}}\]</span></p>
 <p><span
 class="math display">\[\nabla^2\Phi(\mathbf{r})=\frac{1}{\lambda_D^2}\Phi(\mathbf{r})\]</span></p>
 <p><font color='red'>看一下tutorial中公式怎么用的</font></p>
+<h2 id="polymers-centralliit">10. Polymers-CentralLiit</h2>
+<h3 id="intro-polymers">10.1 Intro-Polymers</h3>
+<h3 id="binomial-distribution">10.2 Binomial distribution</h3>
+<p><span class="math display">\[
+p(k) = C_n^k p^k(1-p)^{n-k}
+\]</span></p>
+<p>Special case p=0.5</p>
+<p>Expectation value:</p>
+<p>If n=1, p(1)=p. <span class="math inline">\(\langle x \rangle =
+\sum_{i=1}^1 1\cdot p = p\)</span> $x+y = x y $ therefore <span
+class="math inline">\(\langle x \rangle = np\)</span></p>
+<h4 id="poisson-limit-theorem">Poisson limit theorem</h4>
+<p>n较大, p较小时，二项分布可以近似为泊松分布</p>
+<h3 id="polymers-random-walk-central-limit-theorem">10.3 Polymers-Random
+walk Central limit theorem</h3>
+<p>Atoms don't always matter.</p>
+<h4 id="random-walks-freely-jointed-chain-fjc">Random walks: freely
+jointed chain (FJC)</h4>
+<p>几段等长的segment连接，每一段都可以是任意方向，each segment
+的长度叫做 <strong>Kuhn length (a)</strong></p>
+<h5 id="chain-1d-random-walks">Chain: 1D random walks</h5>
+<p>The expected value of the walker's distance from the origin, R, after
+N steps is 0. <strong>Similar to diffusion</strong> mean = 0, variance =
+<span class="math inline">\(Na^2\)</span> <strong>R为end-to-end
+distance</strong></p>
+<h4 id="central-limit-theorem">Central limit theorem</h4>
+<p>For a set of N random variables {x_n} with finite mean and variance,
+the sum X of {x_n} will tend towards a <strong>Gaussian</strong>
+distribution <em>regardless of the distribution of x_n</em></p>
+<h3 id="polymers---random-walk">10.4 Polymers - Random walk</h3>
+<p>Sharpness of the Gause curve: <span class="math display">\[
+\sigma_x = \sqrt{N}
+\]</span></p>
+<p><span class="math display">\[
+\frac{\sigma_x}{N} = \frac{1}{\sqrt{N}}
+\]</span></p>
+<p>As N becomes larger, the RMS distance increases, but the relative (to
+N) RMS distance becomes tiny, so it is extremely unlikely to be far (as
+compared to N) from the pub door.</p>
+<h4 id="polymer-endtoend-vector-1d">Polymer end‐to‐end vector (1D)</h4>
+<p><span class="math inline">\(\langle x^2 \rangle = Na^2\)</span> <span
+class="math inline">\(p(x,N) \frac{1}{2\pi
+Na^2}e^{-\frac{x^2}{2Na^2}}\)</span></p>
+<h4 id="d-case">3D case</h4>
+<p><span class="math display">\[
+P(R;N) = P(R;N)(1D case)^3
+\]</span></p>
+<p>Similar to diffusion</p>
+<h5 id="end-to-end-distance-r">End-to-end distance R</h5>
+<p><span class="math inline">\(P_{3d}(N,R)4\pi R^2dR\)</span> <strong>3D
+Maximum of distribution NOT at zero! Different from the 1D
+case.</strong></p>
+<h5 id="limitation-of-guassian-model">Limitation of Guassian model</h5>
+<p>Wrong for <span class="math inline">\(R&gt;Bb\)</span></p>
+<p><span class="math inline">\(P(R;N)\)</span> is sharply peaked at
+R=0</p>
+<h2 id="fjc-kuhn_rg">11. FJC-Kuhn_Rg</h2>
+<h3 id="fjc">11.1 FJC</h3>
+<p><span
+class="math inline">\(C_n=\frac{1}{n}\sum_{i=1}^nC_i&#39;\)</span>:
+Flory's characteristic ratio <span class="math inline">\(\langle R^2
+\rangle = l^2\sum_{i=1}^nC_i&#39;=C_nnl^2\)</span></p>
+<p><span class="math inline">\(C_{\infty}\)</span>: Flory's
+characteristic ratio, for large chain</p>
+<h4 id="freely-rotating-chain-model-frc">Freely rotating chain model
+(FRC)</h4>
+<p>different from FJC: <span class="math inline">\(\theta\)</span> is
+const. same for all</p>
+<p><span class="math display">\[
+\langle R^2 \rangle = nl^2 + 2nl^2\frac{\cos \theta}{1- \cos \theta} =
+nl^2\frac{1+\cos \theta}{1-\cos \theta}
+\]</span></p>
+<p><span class="math display">\[
+C_{\infty} = \frac{1+\cos \theta}{1-\cos \theta}
+\]</span></p>
+<h4 id="persistence-length">Persistence length</h4>
+<p><span class="math display">\[
+s_p = -\frac{1}{\ln(\cos \theta)}
+\]</span></p>
+<p><strong>For rigid model:</strong> <span
+class="math inline">\(L_p=a\)</span> <strong>For Continuous
+model:</strong> tangent correlation function <span
+class="math display">\[
+\langle t(s)\cdot t(u) \rangle = e^{-|s-u|/\zeta _p}
+\]</span> <strong>For Worm-like chain(WLC) modle：DNA:</strong> small
+<span class="math inline">\(\theta, \ln(\cos \theta)\approx
+-\frac{\theta ^2}{2}\)</span> <span class="math display">\[
+l_p = s_pl = l\frac{2}{\theta ^2}
+\]</span></p>
+<p><span class="math display">\[
+C_{\infty} = \frac{1+\cos \theta}{1-\cos \theta} \approx \frac{4}{\theta
+^2}
+\]</span></p>
+<p><span class="math display">\[
+b=l\frac{C_{\infty}}{\cos (\frac{\theta}{2})}\approx l \frac{4}{\theta
+^2}=2l_p
+\]</span></p>
+<p>Kuhn lebgth b is twice the persistence length.</p>
+<h3 id="polymers---radius-of-gyration回转半径">11.2 Polymers - Radius of
+Gyration(回转半径)</h3>
+<p><strong>The radius of gyration is used because it can be easily
+measured experimentally.</strong></p>
+<p>Radisu of gyration determined via scattering experiments</p>
+<p><strong>Tutorial 证明</strong>
+<font color='red'>看一下tutorial中公式怎么用的</font></p>
+<h2 id="entropicforce-afm">12. EntropicForce-AFM</h2>
+<h3 id="entropic-force">12.1 Entropic Force</h3>
+<p><span class="math display">\[
+\Omega (N,x) \propto p(N,x), S = k_B\ln \Omega
+\]</span></p>
+<p><span class="math display">\[
+\Delta S = -\frac{k_B}{2Na^2}x^2
+\]</span></p>
+<p><span class="math display">\[
+\Delta G = \Delta U - T\Delta S
+\]</span></p>
+<p>The ideal chain has no internal energy U</p>
+<p><span class="math display">\[
+\therefore \Delta G = -\frac{k_BT}{2Na^2}x^2
+\]</span></p>
+<p><span class="math display">\[
+f = \frac{\partial G(N,x)}{\partial x} = \frac{k_BT}{Na^2}x
+\]</span></p>
+<p>Hooke's law: entropic spring constant <span class="math display">\[
+k = \frac{k_BT}{Na^2}
+\]</span></p>
+<p>It's easier to stretch polymers with:</p>
+<ul>
+<li>large numbers of monomers N</li>
+<li>large monomer size a</li>
+<li>at lower temperature T</li>
+</ul>
+<p><em>The entropic nature of elasticity in polymers distinguishes them
+from other materials.</em></p>
+<p><strong>The ideal chain can be thought of as an entropic spring and
+obeys Hooke's law for elongations much smaller than the maximum
+elogation.</strong> 可以把上面那个x换成end-to-end vector R</p>
+<p><font color='red'>等会看ppt吧，写不下去了</font></p>
+<h3 id="dna-properties-and-genetics">12.2 DNA Properties and
+genetics</h3>
+<p>structure and packing <strong>Polymerase chain reaction</strong></p>
+<h2 id="dna-genetics-bending">13. DNA-Genetics-Bending</h2>
+<h3 id="dna-genetics">13.1 DNA-Genetics</h3>
+<p>GENETICS NETWORKS: DOING THE RIGHT THING AT RIGHT TIME
+<font color='red'>maybe 再看一下ppt上概率那一张</font></p>
+<h3 id="bending">13.1 Bending</h3>
+<p>Three modes of deformation of a beam:</p>
+<ul>
+<li>stretching</li>
+<li>bending</li>
+<li>twisting</li>
+</ul>
+<p>if a bond stretches by <span class="math inline">\(\Delta a\)</span>,
+the beam stretches by <span class="math inline">\(\Delta L =
+\frac{L_0}{a_0}\Delta a\)</span></p>
+<p><span class="math display">\[
+\epsilon = \frac{\Delta L}{L_0} = \frac{\Delta a}{a_0}
+\]</span></p>
+<p><font color='red'>看ppt上公式吧，还有tutorial</font></p>
+<h2 id="dna-looping-packing-viruses">14.
+DNA-Looping-packing-Viruses</h2>
+<h3 id="dna-looping">14.1 DNA-Looping</h3>
+<p><span class="math display">\[
+E_{bend} = \frac{EIL}{2R^2}, L = 2\pi R
+\]</span></p>
+<p><span class="math display">\[
+\therefore E_{loop} = \frac{\pi EI}{R} = \frac{2\pi^2EI}{L}, \zeta_p /
+x_p = \frac{EI}{k_BT}
+\]</span></p>
+<p><span class="math display">\[
+E_{loop} = k_BT2\pi^2\frac{x_p^2}{L} = k_BT2\pi^2\frac{x_p^2}{d\cdot
+N_{bp}}, L = d \cdot N_{bp}
+\]</span></p>
+<p><span class="math display">\[
+\Delta S_{loop} = k_B \ln p_o = k_B(-\frac{3}{2}\ln N_{bp}+const)
+\]</span></p>
+<p><span class="math inline">\(p_o\)</span> is the probability of loop
+formation, <span class="math inline">\(p_o \propto
+N_{bp}^{-\frac{3}{2}}\)</span></p>
+<p><span class="math display">\[
+\Delta G_{loop} = \Delta E_{loop} - T\Delta S_{loop}
+\]</span></p>
+<h3 id="dna-packing-viruses">14.2 DNA packing, Viruses</h3>
+<p>Viruses as Charged Spheres <span class="math inline">\(q =
+-2e\)</span> per base pair</p>
+<p><span class="math display">\[
+U_{el} = \int dU = \int _0^R V(r)dq
+\]</span></p>
+<p><strong>DNA in solution:</strong> <span class="math inline">\(\lambda
+_D\)</span> <strong>DNA in capsid</strong></p>
+<p><span class="math display">\[
+W = NkT \ln (\frac{V_{cloud}}{V_{capsid}})
+\]</span></p>
+<p><font color='red'>ppt上单分子技术</font></p>
+<h2 id="reactions-1">15. Reactions</h2>
+<p><font color='red'>看一下tutorial中公式怎么用的或者pdf推导</font></p>
+<p>Some examples</p>
+<p><strong><em>Cytoskeleton polymerization</em></strong></p>
+<p><span class="math display">\[
+\frac{dn}{dt} = k_{on}(c_)-\frac{Mn(t)}{V}-k_{off}
+\]</span></p>
+<h2 id="membrane-surfaces">16. Membrane-Surfaces</h2>
+<h3 id="membranes-intro">16.1 Membranes-Intro</h3>
+<ul>
+<li>2D fluid: Lateral diffusion</li>
+<li>MP can also diffuse</li>
+<li>Lipid flip-flop</li>
+</ul>
+<p>Lipids self assemble</p>
+<p>The effective shape of a lipid molucule is described by a packing
+parameter:</p>
+<p><span class="math display">\[
+P = \frac{v}{al}
+\]</span></p>
+<p>Membrane Permeability</p>
+<p><span class="math display">\[
+j = P\Delta c
+\]</span></p>
+<p>P为Permeability coefficient</p>
+<p>All membranes indergo spontaneous shape changes and fluctuations due
+to thermal energy or application of external forces</p>
+<p>Membrane fusion and budding</p>
+<h3 id="surfaces-math-background">16.2 Surfaces Math Background</h3>
+<p><font color='red'>看一下tutorial中公式怎么用的, ppt
+要是有时间也可以看看吧</font></p>
+<p><span class="math display">\[
+dE_{surface} =
+[\frac{\kappa}{2}(\frac{1}{R_1}+\frac{1}{R_2}-\frac{2}{R_0})^2+\frac{\kappa
+G}{R_1R_2}]dA
+\]</span></p>
+<h3 id="membrane-deformation-and-curvature">16.3 Membrane deformation
+and curvature</h3>
+<p><strong>bending</strong> curvature: height function</p>
+<p><span class="math display">\[
+\kappa = \frac{1}{R} = \frac{\partial ^2h}{\partial x^2}
+\]</span></p>
+<p>对角化Hessian matrix, 本征值即为两个方向上的曲率</p>
+<p><span class="math display">\[
+G_{bend} = \frac{K_b}{2}\int da [\kappa _1+\kappa _2]^2
+\]</span></p>
+<p><span class="math display">\[
+G_{thickness} = \frac{K_t}{2} \int (\frac{w-w_0}{w_0})^2da
+\]</span></p>
+<p><span class="math display">\[
+G_{stretch} = \frac{K_a}{2} \int (\frac{\Delta a}{a_0})^2 da
+\]</span></p>
+<h2 id="membrane-potential">17. Membrane-Potential</h2>
+<h3 id="mps">17.1 MPs</h3>
+<h4 id="membrane-proteins">Membrane proteins</h4>
+<h4 id="mp-structure-determination">MP structure determination</h4>
+<h3 id="membrane-potential-1">17.2 Membrane Potential</h3>
+<p><span class="math display">\[
+c(x) \sim e^{\beta E(x)} = e^{-\beta z eV(x)}
+\]</span></p>
+<p><span class="math display">\[
+\Delta V = V_2 -V_1 = \frac{k_BT}{ze} \ln \frac{c_1}{c_2}
+\]</span></p>
+<p><span class="math display">\[
+\Delta \epsilon = \Delta \epsilon _{conf} - p \frac{V_{mem}}{d}
+\]</span></p>
+<p><span class="math display">\[
+p_{open} = \frac{e^{-\beta \Delta \epsilon}}{1+e^{-\beta \Delta
+\epsilon}}
+\]</span></p>
+<p>Nerst equation relates chemical potential to electric potential</p>
+<h2 id="membrane-patchclamp">18. Membrane-PatchClamp</h2>
+<h3 id="vesicles">18.1 Vesicles</h3>
+<p>For a vesicle of radius R:</p>
+<p><span class="math display">\[
+GG_{bend} = 8\pi K_b
+\]</span></p>
+<p>For a Cylinder:</p>
+<p><span class="math display">\[
+G_{bend} = K_b\pi \frac{L}{R}
+\]</span></p>
+<h3 id="surface-tension">18.2 Surface Tension</h3>
+<p>表面处：<span class="math inline">\(E = -\frac{z}{2}\epsilon\)</span>
+内部：<span class="math inline">\(E = -z\epsilon\)</span></p>
+<p><span class="math display">\[
+\Delta E = +\frac{z}{2}\epsilon
+\]</span></p>
+<p>Surface tension <span class="math inline">\(\gamma\)</span>: Energy
+per unit area of the surface = surface energy density</p>
+<p><span class="math display">\[
+\gamma = \frac{F}{2L} = \frac{dW}{dA}
+\]</span></p>
+<p><span class="math inline">\(dA\)</span> is total area change, 2
+sides</p>
+<p><strong>Laplace-Young law:</strong></p>
+<p><span class="math display">\[
+\Delta P = \frac{2\gamma}{R}
+\]</span></p>
+<p><font color='red'>看tutorial怎么用</font></p>
+<h3 id="membranes-patch-clamp">18.3 Membranes: Patch clamp</h3>
+<p><font color='red'>看tutorial怎么用</font></p>
 
                 
               </div>
@@ -683,7 +978,7 @@ class="math display">\[\nabla^2\Phi(\mathbf{r})=\frac{1}{\lambda_D^2}\Phi(\mathb
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2024年10月30日</div>
+          <div>2025年11月21日</div>
         </div>
       
       
