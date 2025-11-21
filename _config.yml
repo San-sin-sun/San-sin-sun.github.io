@@ -101,8 +101,12 @@ theme: fluid
 # MathJax configuration
 mathjax:
   enable: true
-  per_page: false
+  per_page: true
   per_post: true
+
+pandoc:
+  filters: []
+  extra: []
   
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment

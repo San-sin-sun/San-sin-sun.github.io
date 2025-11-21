@@ -8,14 +8,14 @@ node_modules/
 *.tmp
 
 # 忽略 public 目录中的所有内容
-public/*
+# public/*
 
 # 但不忽略 public 目录中的 index.html 文件
-!public/index.html
+# !public/index.html
 
 # 忽略特定文件
-config.yaml
+# config.yaml
 
 # 忽略 .env 文件
-.env
+# .env
    
